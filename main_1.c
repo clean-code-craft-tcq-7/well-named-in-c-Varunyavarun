@@ -1,1 +1,1 @@
-
+enum MinorColor {BLUE, ORANGE, GREEN, BROWN, SLATE};
