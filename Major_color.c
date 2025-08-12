@@ -1,18 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
-
-enum MajorColor {WHITE, RED, BLACK, YELLOW, VIOLET};
-
-const char* MajorColorNames[] = {
-    "White", "Red", "Black", "Yellow", "Violet"
-};
-int numberOfMajorColors =
-    sizeof(MajorColorNames) / sizeof(MajorColorNames[0]);
-#define MAX_COLORPAIR_NAME_CHARS 16
-
-typedef struct {
-    enum MajorColor majorColor;
-} ColorPair;
+#include "color_translation.h"
 
 void ColorPairToString(const ColorPair* colorPair, char* buffer) {
     sprintf(buffer, "%s %s",
@@ -56,9 +44,7 @@ void testPairToNumber(
 int main() {
     testNumberToPair(4, WHITE, BROWN);
     testNumberToPair(5, WHITE, SLATE);
-
     testPairToNumber(BLACK, ORANGE, 12);
     testPairToNumber(VIOLET, SLATE, 25);
-
     return 0;
 }
